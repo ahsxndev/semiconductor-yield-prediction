@@ -1,0 +1,6 @@
+model,type,test_accuracy,test_precision,test_recall,test_f1,test_roc_auc,approach
+Dummy Classifier,Baseline,0.9331,0.0,0.0,0.0,0.5,Most frequent class
+Logistic Regression (Balanced),Baseline,0.8981,0.15,0.4286,0.2222,0.72,class_weight=balanced
+Decision Tree (Balanced),Baseline,0.8854,0.1379,0.1905,0.16,0.6,class_weight=balanced
+Gaussian Naive Bayes,Baseline,0.8726,0.1212,0.1905,0.1481,0.67,No balancing
+Random Forest (Tuned),Advanced,0.9395,0.75,0.1429,0.24,0.7096,class_weight=balanced + tuning

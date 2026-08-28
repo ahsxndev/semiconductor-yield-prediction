@@ -1,0 +1,100 @@
+{
+  "project": "Semiconductor Yield Prediction (SECOM Dataset)",
+  "dataset": {
+    "total_samples": 1567,
+    "features_original": 590,
+    "features_engineered": 100,
+    "feature_reduction": "83%",
+    "train_samples": 1096,
+    "val_samples": 157,
+    "test_samples": 314,
+    "failure_rate": "6.69%",
+    "class_imbalance_ratio": "1:14"
+  },
+  "best_model": {
+    "name": "Random Forest (Tuned)",
+    "approach": "class_weight=balanced + hyperparameter tuning",
+    "parameters": {
+      "n_estimators": 100,
+      "max_depth": 10,
+      "min_samples_split": 20,
+      "min_samples_leaf": 8,
+      "max_features": "sqrt",
+      "bootstrap": false,
+      "class_weight": "balanced"
+    },
+    "test_performance": {
+      "accuracy": 0.9394904458598726,
+      "precision": 0.75,
+      "recall": 0.14285714285714285,
+      "f1_score": 0.24,
+      "roc_auc": 0.7095725662278562,
+      "pr_auc": 0.2548256901097608
+    },
+    "confusion_matrix": {
+      "true_negatives": 292,
+      "false_positives": 1,
+      "false_negatives": 18,
+      "true_positives": 3,
+      "failures_caught": "3/21",
+      "failures_missed": "18/21"
+    }
+  },
+  "baseline_comparison": {
+    "logistic_regression_f1": 0.2222,
+    "random_forest_f1": 0.24,
+    "improvement": "8.0%"
+  },
+  "all_models": [
+    {
+      "model": "Dummy Classifier",
+      "type": "Baseline",
+      "test_accuracy": 0.9331,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "test_roc_auc": 0.5,
+      "approach": "Most frequent class"
+    },
+    {
+      "model": "Logistic Regression (Balanced)",
+      "type": "Baseline",
+      "test_accuracy": 0.8981,
+      "test_precision": 0.15,
+      "test_recall": 0.4286,
+      "test_f1": 0.2222,
+      "test_roc_auc": 0.72,
+      "approach": "class_weight=balanced"
+    },
+    {
+      "model": "Decision Tree (Balanced)",
+      "type": "Baseline",
+      "test_accuracy": 0.8854,
+      "test_precision": 0.1379,
+      "test_recall": 0.1905,
+      "test_f1": 0.16,
+      "test_roc_auc": 0.6,
+      "approach": "class_weight=balanced"
+    },
+    {
+      "model": "Gaussian Naive Bayes",
+      "type": "Baseline",
+      "test_accuracy": 0.8726,
+      "test_precision": 0.1212,
+      "test_recall": 0.1905,
+      "test_f1": 0.1481,
+      "test_roc_auc": 0.67,
+      "approach": "No balancing"
+    },
+    {
+      "model": "Random Forest (Tuned)",
+      "type": "Advanced",
+      "test_accuracy": 0.9395,
+      "test_precision": 0.75,
+      "test_recall": 0.1429,
+      "test_f1": 0.24,
+      "test_roc_auc": 0.7096,
+      "approach": "class_weight=balanced + tuning"
+    }
+  ]
+}
