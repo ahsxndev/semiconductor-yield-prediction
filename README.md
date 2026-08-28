@@ -5,7 +5,103 @@
 ![MLflow](https://img.shields.io/badge/MLflow-tracking-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-An end-to-end machine learning project for predicting semiconductor wafer pass/fail outcomes using the UCI SECOM dataset. This project demonstrates comprehensive data science workflow from exploratory data analysis through model deployment, with a focus on handling extreme class imbalance in manufacturing quality control.
+# Semiconductor Yield Prediction
+
+An interactive Streamlit application for predicting semiconductor wafer yield from processed SECOM sensor data. The dashboard lets you inspect a test-set chip, view its predicted failure risk, compare the prediction with the ground truth, and explore a local LIME explanation.
+
+## Features
+
+- XGBoost binary classification for Pass/Fail prediction
+- Configurable failure threshold loaded from the trained model assets
+- Interactive test-chip selection in the Streamlit sidebar
+- Failure probability and predicted label
+- Ground-truth comparison for test-set samples
+- LIME-based local root-cause explanation with the ten most influential features
+
+## Project Structure
+
+```text
+semiconductor-yield-prediction/
+├── app.py                                  # Streamlit dashboard
+├── requirements.txt                         # Python dependencies
+├── Semiconductor_Yield_Prediction_Research.ipynb
+│                                            # Research and model-development notebook
+└── models/
+  ├── xgb_model.json                       # XGBoost model loaded by the app
+  ├── xgb_model.joblib                     # Serialized model artifact
+  ├── best_threshold.joblib                # Selected classification threshold
+  ├── X_test_preprocessed.csv              # Preprocessed test features
+  ├── X_train_resampled.csv               # Training data used by LIME
+  └── y_test.csv                            # Test-set labels
+```
+
+## Requirements
+
+- Python 3.10 or newer
+- pip
+- The files in the `models/` directory
+
+The dependency versions are defined in [requirements.txt](requirements.txt). The project includes XGBoost, scikit-learn, pandas, NumPy, Streamlit, Matplotlib, and LIME, along with the notebook and analysis dependencies.
+
+## Installation
+
+Open a terminal in the project directory and run:
+
+```cmd
+py -m venv .venv
+.venv\Scripts\activate
+py -m pip install -r requirements.txt
+```
+
+To install the packages directly instead, run:
+
+```cmd
+py -m pip install streamlit pandas numpy joblib xgboost lime matplotlib
+```
+
+## Run the Dashboard
+
+```cmd
+py -m streamlit run app.py
+```
+
+Streamlit will display a local URL in the terminal, usually `http://localhost:8501`.
+
+Use the **Batch Inspection** slider to select a chip from the preprocessed test set. The dashboard then calculates the failure probability, applies the saved threshold, displays the actual label, and generates a LIME explanation.
+
+## Model and Data Notes
+
+- The application expects all paths relative to the project root.
+- `xgb_model.json` is the native XGBoost model loaded by `app.py`.
+- `best_threshold.joblib` controls whether a sample is classified as Pass or Fail.
+- `X_test_preprocessed.csv` must have the same feature columns and ordering used during model training.
+- `X_train_resampled.csv` supplies the reference data and feature names for the LIME explainer.
+- The app uses the labels in `y_test.csv` only to show the known outcome for the selected test sample.
+
+## Research Notebook
+
+Open [Semiconductor_Yield_Prediction_Research.ipynb](Semiconductor_Yield_Prediction_Research.ipynb) to review the data exploration, preprocessing, resampling, model development, and evaluation work behind the saved artifacts.
+
+Start Jupyter with:
+
+```cmd
+py -m jupyter notebook Semiconductor_Yield_Prediction_Research.ipynb
+```
+
+## Dataset
+
+The project is based on the [UCI SECOM dataset](https://archive.ics.uci.edu/ml/datasets/SECOM), which contains semiconductor manufacturing sensor measurements and a binary pass/fail target. The dashboard consumes the processed model inputs rather than the raw dataset.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Author
+
+**Adhokshaj Baliga**
+
+- [LinkedIn](https://www.linkedin.com/in/adhokshaj1/)
+- [GitHub](https://github.com/Adhokshaj04)
 
 ## Table of Contents
 - [Problem Statement](#problem-statement)

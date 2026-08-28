@@ -5,6 +5,7 @@ scipy==1.15.2
 
 # Machine Learning
 scikit-learn==1.6.1
+xgboost>=2.0.0
 imbalanced-learn==0.12.4
 
 # Visualization
@@ -14,6 +15,7 @@ plotly==6.0.0
 
 # Model Interpretability
 shap==0.47.0
+lime>=0.2.0.1 
 
 # Experiment Tracking
 mlflow==2.19.0
@@ -21,7 +23,7 @@ mlflow==2.19.0
 # Streamlit Dashboard
 streamlit==1.41.1
 
-# Jupyter
+# Jupyter 
 jupyter==1.1.1
 ipykernel==6.29.5
 
