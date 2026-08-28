@@ -3,7 +3,7 @@
 ### Cost-Sensitive Machine Learning with SHAP and LIME
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/)
-[![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](YOUR_STREAMLIT_LINK)
+[![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)]([YOUR_STREAMLIT_LINK](https://secom-yield-ai.streamlit.app/))
 
 ## Overview
 
@@ -536,7 +536,7 @@ Together, the modeling, cost analysis and explainability components provide a sm
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ## Author
 
