@@ -2,7 +2,7 @@
 
 ### Cost-Sensitive Machine Learning with SHAP and LIME
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ahsxndev/semiconductor-yield-prediction/blob/main/Semiconductor_Yield_Prediction_Research.ipynb)
 [![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)]([YOUR_STREAMLIT_LINK](https://secom-yield-ai.streamlit.app/))
 
 ## Overview
